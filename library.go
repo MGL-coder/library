@@ -2,6 +2,7 @@ package library
 
 import (
 	"errors"
+	"github.com/agext/uuid"
 	"math"
 	"strings"
 	"unicode"
@@ -22,4 +23,8 @@ func ToSolveQuadraticFunc(a, b, c float64) (float64, float64, error) {
 		return 0, 0, errors.New("no solution exists for the given quadratic equation")
 	}
 	return (-b - math.Sqrt(d)) / (2 * a), (-b + math.Sqrt(d)) / (2 * a), nil
+}
+
+func ToGetUUID() uuid.UUID {
+	return uuid.New()
 }
